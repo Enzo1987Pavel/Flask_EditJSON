@@ -30,19 +30,20 @@ def page_of_creating_new_post_by_user():
 		abort(400)
 
 	if not content and not picture:
-		logging.info("Текст и изображение поста отсутствуют!")
+		logging.info("Ошибка загрузки на сервер нового поста. Текст и изображение поста отсутствуют!")
 		return render_template("No_data.html", post_error="Текст и изображение поста отсутствуют! Необходимо добавить данные!")
 
 	elif not content:
-		logging.info("Текст поста отсутствует!")
+		logging.info("Ошибка загрузки на сервер нового поста. Текст поста отсутствует!")
 		return render_template("No_data.html", post_error="Текст поста отсутствует!")
 
 	elif not picture:
-		logging.info("Изображение поста отсутствует!")
+		logging.info("Ошибка загрузки на сервер нового поста. Изображение поста отсутствует!")
 		return render_template("No_data.html", post_error="Изображение поста отсутствует! Необходимо добавить изображение!")
 
 	posts = funcs.load_json_file(POST_PATH)
 
 	add_post(posts, new_post)
 
+	logging.info("Пост успешно добавлен!")
 	return render_template("post_uploaded.html", new_post=new_post)
