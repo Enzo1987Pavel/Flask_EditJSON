@@ -2,25 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="../../static/style.css">
+    <title>Главная страница</title>  <!--Название главной страницы-->
+    <link rel="stylesheet" href="../../static/style.css">  <!--подключение стилей к текущей странице-->
 </head>
 <body>
 
 <main>
+    <h1>Поиск постов</h1>  <!--заголовок главной страницы-->
 
-    <h1>Поиск постов</h1>
-
-    <form action="/" method="get">
+    <!--форма для поиска нужного слова(части слова) в посте-->
+    <form action="/search" method="get">
         <p>По вхождению слова</p>
         <input type="text" name="s">
         <input type="submit" value="Найти" class="button">
     </form>
-
     <hr>
 
-    <a href="/" class="button">Добавить пост</a>
-
+    <a href="/post" class="button">Добавить пост</a>  <!--клавиша добавления нового поста-->
 </main>
 </body>
 </html>

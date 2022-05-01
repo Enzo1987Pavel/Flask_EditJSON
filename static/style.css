@@ -6,7 +6,9 @@ body {
 }
 
 main {
-    margin: 32px auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 32px;
     width: 320px;
 }
 
